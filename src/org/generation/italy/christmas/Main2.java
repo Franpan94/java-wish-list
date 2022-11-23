@@ -1,13 +1,13 @@
 package org.generation.italy.christmas;
 
-import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class Main2 {
     public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-        Set<Character> word = new HashSet<>();
+        Set<Character> word = new TreeSet<>();
         
         	System.out.print("Inserisci una parola: ");
         	String userWord = sc.nextLine();
