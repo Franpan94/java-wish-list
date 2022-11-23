@@ -11,7 +11,29 @@ public class Main {
 
 		@Override
 		public int compare(String o1, String o2) {
-			return 0;
+			int countVocal1 = 0;
+			int countVocal2 = 0;
+			
+			for(int i=0; i<o1.length(); i++) {
+				if(o1.charAt(i) == 'a' || o1.charAt(i) == 'e'
+						|| o1.charAt(i) == 'i'	|| o1.charAt(i) == 'o'
+						|| o1.charAt(i) == 'u') {
+					
+					countVocal1++;
+				}
+			}
+			
+			for(int i=0; i<o2.length(); i++) {
+				if(o2.charAt(i) == 'a' || o2.charAt(i) == 'e'
+						|| o2.charAt(i) == 'i'	|| o2.charAt(i) == 'o'
+						|| o2.charAt(i) == 'u') {
+					
+					countVocal2++;
+				}
+			}
+			return countVocal2 - countVocal1;
+			
+	
 		}
 		
 	}
@@ -29,9 +51,11 @@ public class Main {
         			wishList.add(userRequest);
         			int listLength = wishList.size();
         			System.out.println("Lunghezza lista: " + listLength);
+        		
         		} else if(request.equals("no")) {
         			wishList.sort(new StringComparator());
         			System.out.println("Lista dei desideri: " + wishList);
+        		
         		} else System.out.println("Inserisci una risposta valida");
         			
             }
