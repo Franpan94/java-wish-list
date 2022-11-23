@@ -6,16 +6,18 @@ import java.util.TreeMap;
 
 public class Main3 {
    public static void main(String[] args) {
-	   Map<Character, Integer> word = new TreeMap<>();
+	   Map<Character, Integer> freq = new TreeMap<>();
 	   Scanner sc = new Scanner(System.in);
 	   System.out.print("Inserisci una parola: ");
 	   String userWord = sc.nextLine();
 	   
-	   for(int i=0; i<userWord.length(); i++) {
-		   char userChar = userWord.charAt(i);
-		   word.put(userChar, i); 
+	   for(Character character : userWord.toCharArray()) {
+		   if(freq.containsKey(character)) {
+			   int oldFreq = freq.get(character);
+			   freq.put(character, oldFreq +1);
+		   } else freq.put(character, 1);
 	   }
 	   
-	   System.out.print("Mappatura della parola: " + word);
+	   System.out.print("Mappatura della parola: " + freq);
 }
 }
